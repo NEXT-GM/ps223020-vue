@@ -36,7 +36,10 @@
         </table>
       </div>
     </div>
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     <!-- <b-modal
       ref="addBookModal"
       id="book-modal"
@@ -66,7 +69,11 @@
           <b-form-input
             id="form-author-input"
             type="text"
+<<<<<<< Updated upstream
             v-model="addBookForm.author"
+=======
+            v-model="addNoteMForm.author"
+>>>>>>> Stashed changes
             required
             placeholder="Enter author"
           >
@@ -91,18 +98,31 @@ export default {
   data() {
     return {
       notes: [],
+<<<<<<< Updated upstream
       addNoteForm: {
         Title: '',
         Body: '',
         CreateTime: '',
+=======
+      addNoteMForm: {
+        title: '',
+        author: '',
+        read: [],
+>>>>>>> Stashed changes
       },
     };
   },
   methods: {
+<<<<<<< Updated upstream
     getNotes() {
       const path = "http://localhost:52362/api/Notes";
       axios
         .get(path)
+=======
+    getNoteMs() {
+      const path = 'http://localhost:64960/api/NoteMs';
+      axios.get(path)
+>>>>>>> Stashed changes
         .then((res) => {
           this.notes = res.data;
         })
@@ -111,6 +131,7 @@ export default {
           console.error(err);
         });
     },
+<<<<<<< Updated upstream
     // addNote(payload) {
     //   const path = 'http://localhost:50898/api/Notes';
     //   axios.post(path, payload)
@@ -147,8 +168,44 @@ export default {
     //   this.initForm();
     // },
   },
+=======
+  //   addNoteM(payload) {
+  //     const path = 'http://localhost:64960/api/NoteMs';
+  //     axios.post(path, payload)
+  //       .then(() => {
+  //         this.getNoteMs();
+  //       })
+  //       .catch((error) => {
+  //         // eslint-отключение следующей строки
+  //         console.log(error);
+  //         this.getNoteMs();
+  //       });
+  //   },
+  //   initForm() {
+  //     this.addNoteMForm.Title = '';
+  //     this.addNoteMForm.Body = '';
+  //     this.addNoteMForm.CreateDate = '';
+  //   },
+  //   onSubmit(evt) {
+  //     evt.preventDefault();
+  //     this.$refs.addBookModal.hide();
+  //     const payload = {
+  //       Title: this.addNoteMForm.Title,
+  //       Body: this.addNoteMForm.Body,
+  //       CreateTime:this.addNoteMForm.CreateDate, // сокращённое свойство
+  //     };
+  //     this.addNoteM(payload);
+  //     this.initForm();
+  //   },
+  //   onReset(evt) {
+  //     evt.preventDefault();
+  //     this.$refs.addBookModal.hide();
+  //     this.initForm();
+  //   },
+    },
+>>>>>>> Stashed changes
   created() {
-    this.getNotes();
+    this.getNoteMs();
   },
 };
 </script>
